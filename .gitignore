@@ -1,0 +1,11 @@
+# Build directories
+build/
+*/build/
+.DS_Store
+
+# Temporary files
+*.tmp
+*.temp
+
+# DuckDB build artifacts
+duckdb_unittest_tempdir/
