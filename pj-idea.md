@@ -1,9 +1,35 @@
 # DuckDB FTS Trigram Tokenizer
 
-## 実装ステータス: 日本語対応完了
+## 実装ステータス: 日本語対応完了 (2026-02-03)
 
 DuckDB FTS拡張にtrigramトークナイザーを追加する実装が完了しました。
 **2026-02-03**: UTF-8文字単位trigram（`trigram_unicode`）を実装し、日本語を含むマルチバイト文字に対応しました。
+
+### 最終状況 (2026-02-03 21:50)
+
+#### ✅ 完了作業
+| 作業 | ステータス |
+|------|----------|
+| UTF-8文字分割関数実装 | ✅ |
+| trigram_unicode関数実装 | ✅ |
+| tokenizer統合（trigram_unicode） | ✅ |
+| テストファイル作成 | ✅ |
+| ドキュメント更新（README.md） | ✅ |
+| ビルド（拡張機能） | ✅ (`fts.duckdb_extension`: 8.7MB) |
+| ビルド（unittest） | ✅ (`unittest`: 45MB) |
+| Gitコミット作成 | ✅ (commit: 0fd7f37) |
+
+#### ❌ 未解決課題
+| 課題 | 説明 |
+|------|------|
+| unittestでの拡張機能ロード | `require fts` で全FTSテストがスキップ |
+| テスト実行環境の設定 | unittestがFTS拡張を正しくロードできていない |
+
+#### 📝 引継ぎ事項
+1. unittestの拡張機能ロード設定方法を調査
+2. テスト環境での`require fts`スキップ問題を解決
+3. upstream PRを作成する前にテストを通すこと
+4. CI/CDでのテスト設定を確認
 
 ---
 

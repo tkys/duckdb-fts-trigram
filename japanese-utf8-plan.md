@@ -8,6 +8,24 @@
 - ✅ Phase 4: テスト・ドキュメント更新
 - ⏳ Phase 5: upstream PR準備（未実施）
 
+## 最終ステータス (2026-02-03 21:50)
+
+### ✅ 完了
+- コード実装: `GenerateTrigramsUnicodeFunction`, `trigram_unicode` tokenizer
+- ビルド: 拡張機能 (`fts.duckdb_extension`), unittestバイナリ
+- コミット: Gitコミット作成済み (0fd7f37)
+- ドキュメント: README.md, pj-idea.md 更新完了
+- テストファイル: `test_trigram_unicode.test` 作成
+
+### ❌ 未解決
+- unittestでの拡張機能ロード設定: `require fts` で全テストスキップ
+- テスト実行環境の構築: unittestがFTS拡張を正しくロードできていない
+
+### 📝 引継ぎ事項
+1. unittestの拡張機能ロード設定方法を調査
+2. テスト環境での`require fts`スキップ問題を解決
+3. upsteam PRを作成する前にテストを通すこと
+
 ## 1. 目標
 
 DuckDB FTS拡張のtrigramトークナイザーを日本語（マルチバイトUTF-8）に対応させ、部分一致検索を可能にする。
